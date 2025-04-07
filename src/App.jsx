@@ -1,34 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import "./App.css"
+import { TextBox } from "@progress/kendo-react-inputs"
+import { Button } from "@progress/kendo-react-buttons"
+import { SendHorizontal } from "lucide-react"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <section id="app">
+      <div id="frame">
+        <div id='message'>
+          <div className="message-box-bot">
+            <p>This is a test</p>
+          </div>
+          {/* <div className="message-box-user">
+            <p>This is a test</p>
+          </div> */}
+        </div>
+        <div id="input-box">
+          <TextBox placeholder="Type here..." class="input" />
+          <Button class="submit-button"><SendHorizontal color="#ffffff"/></Button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </section>
   )
 }
 
